@@ -1,0 +1,13 @@
+131.173.42.1:200:/liste.html
+131.173.42.1:200:/bild.jpg
+131.173.42.1:200:/index.html
+127.0.0.1:200:/index.html
+127.0.0.1:200:/index.html
+timeout
+1.60.80.17:404:/liste,html
+1.60.80.17:200:/more/beispiel1.html
+1.60.80.17:200:/more/beispiel2.html
+1.60.80.17:200/more/beispiel.html
+131.173.42.2:404:/error/index.html
+131.173.42.2:404:/error/index.html
+131.173.42.2:404:/error/index.html
