@@ -22,7 +22,7 @@ App-Klasse entnommen werden. Sie dürfen die vorhandenen App-Klassen auch änder
 
 Der Prefix-Mechanismus soll wie in den Beispielen funktionieren. 
 
-Erstellen Sie ein starbares Programm `info.py`, dass folgendes URL-Schema implementiert:
+Erstellen Sie ein startbares Programm `info.py`, dass folgendes URL-Schema implementiert:
 * / - Allgemeine Begrüßungsseite (beliebigen begrüßenden Inhalts)
 * /static - Statische Dateien
 * /info - Zugriff auf die Info-App
