@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Edit {pagename}</title>
+		<link rel="stylesheet" type="text/css" href="/static/wiki.css">
+	</head>
+	<body>
+		<h1>{pagename}</h1>
+		<div class="wikitext">
+			<form action="/save/{pagename}" method="post">
+				<textarea class="wikiedit" name="wikitext">{text}</textarea>
+				<input type="submit" value="save">
+			</form>
+		</div>
+		<div class="actions">
+			<a href="/show/{pagename}">cancel</a>
+		</div>
+	</body>
+</html>
