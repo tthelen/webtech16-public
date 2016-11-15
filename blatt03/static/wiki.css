@@ -1,0 +1,22 @@
+body { margin: 50px; 
+       padding: 15px;
+       background: #ddd; 
+       border: 1px solid black; 
+}
+
+.wikitext {
+	background: white;
+	padding: 10px;
+	margin: 10px;
+}
+
+.wikiedit {
+	display: block;
+	min-height: 20em;
+	width: 80%;
+}
+
+.actions {
+	margin: 15px;
+	text-align: right;
+}
