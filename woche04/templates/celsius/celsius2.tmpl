@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Celsius -> Fahrenheit Umrechnung</title>
+    <link rel="stylesheet" href="/static/celsius.css">
+    <script src="/static/validate.js"></script>
+</head>
+<body>
+    <h1>Umrechnung Celsius -> Fahrenheit</h1>
+
+    <p>$msg</p>
+
+    <form action="/celsius" id="celsius-form" method="get">
+        <label for="celsius">Bitte Grad Celsius eingeben: </label>
+           <input name=celsius id=celsius data-validate="float">
+           <span id="celsius-msg" class="error"></span>
+           <input name=plz id=plz data-validate="regex:/^[0-9]{5}$$/">
+           <span id="plz-msg" class="error"></span>
+        <input type="submit">
+    </form>
+
+</body>
+</html>

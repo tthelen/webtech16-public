@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Celsius -> Fahrenheit Umrechnung</title>
+</head>
+<body>
+    <h1>Umrechnung Celsius -> Fahrenheit</h1>
+
+    <p id="msg">$msg</p>
+
+    <form action="" method="get" id="theform">
+        <label for="celsius">Bitte Grad Celsius eingeben: </label>
+        <input name=celsius id=celsius>
+    </form>
+
+<script>
+    var theform = document.getElementById("theform");
+    theform.addEventListener("submit", function (event) {
+        var celsius = document.getElementById("celsius").value;
+        if (isNaN(parseFloat(celsius))) {
+            document.getElementById("msg").innerHTML = "BITTE eine Zahl eingeben";
+            event.preventDefault();
+        } else {
+            var fahrenheit = parseFloat(celsius) * 9/5 +32;
+            document.getElementById("msg").innerHTML = celsius+"°C = "+fahrenheit+"°F";
+            event.preventDefault();
+        }
+        // °F = °C * 9/5 + 32
+    });
+</script>
+
+</body>
+</html>

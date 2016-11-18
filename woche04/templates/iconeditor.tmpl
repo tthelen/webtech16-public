@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ICON editor</title>
+    <script src="/static/validate.js"></script>
+    <script src="/static/iconeditor.js"></script>
+    <link rel="stylesheet" href="/static/iconeditor.css">
+</head>
+
+<body>
+
+<header>
+    <h1>ICON Editor</h1>
+</header>
+
+<section>
+    <div id="icon-table">
+    </div>
+</section>
+
+<aside>
+    <h2>Farbauswahl</h2>
+    <p>Aktuelle Farbe:
+         <table><tr><td id="current-color" class="icon-pixel"></td></tr></table>
+    </p>
+    <div id="color-picker">
+    </div>
+    <h2>Vorschau:</h2>
+    <div id="preview">
+        <canvas id="preview-canvas" width="16" height="16"></canvas>
+    </div>
+    <h2>Speichern:</h2>
+    <form id="save" method="post" action="/save">
+        <label for="save-title">Titel (nur Buchstaben und Zahlen): </label>
+        <input type="text" name="title" id="save-title" data-validate="regex:/^[a-zA-Z0-9]+$$/"> <span id="save-title-msg"></span><br>
+        <input type="hidden" id="save-icon" name="icon" value="">
+        <input type="submit">
+    </form>
+</aside>
+
+<footer>
+    <p>Vorhandene Icons:</p>
+    $icons
+</footer>
+</body>
+</html>
