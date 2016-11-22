@@ -1,0 +1,38 @@
+section {
+    float: left;
+    margin: 2em;
+}
+
+aside {
+}
+
+.icon-table {
+    border: 1px solid black;
+}
+
+.icon-pixel {
+    width: 1em;
+    height: 1em;
+    border: 1px solid black;
+}
+
+.color-picker-table {
+    border: 1px solid black;
+}
+
+.picker-pixel {
+    width: 0.5em;
+    height: 0.5em;
+    border: 1px solid black;
+}
+
+#preview-canvas {
+    border: 1px black solid;
+    padding: 5px;
+}
+
+.icon-list-item {
+    display: inline;
+    list-style-type: none;
+    padding-right: 10px;
+}
