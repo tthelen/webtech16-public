@@ -1,0 +1,16 @@
+{% extends 'skel.tmpl' %}
+{% set active_page = 'page2' %}
+
+{% block title %}Seite 2{% endblock %}
+
+{% block content %}
+    <h1>Die zweite Seite</h1>
+    <p>
+      Diese Seite ist die zweite. Sie steht nach der ersten. Aber sie steht der ersten in nichts nach.
+    </p>
+    <p>Und hier ist magische Zahl: {{magic_number}}.</p>
+
+    {% import 'user.tmpl' as user %}
+    Written by {{ user.u(author) }}.
+
+{% endblock %}

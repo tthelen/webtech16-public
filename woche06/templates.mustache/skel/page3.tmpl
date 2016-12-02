@@ -1,0 +1,14 @@
+{{> skel_start}}
+
+    <h1>Die dritte Seite</h1>
+    <p>
+      Diese Seite ist die dritte. Sie steht nach der zweiten. Sie ist toller, weil sie mehr magische Zahlen enthält.
+    </p>
+    <p>Und hier sind die magischen Zahlen:
+        {{#magic_numbers}}
+            {{.}}
+        {{/magic_numbers}}.
+    </p>
+    <p>Dieser Text ist sicher: {{{ message }}}</p>
+
+{{> skel_end}}

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}SKEL{% endblock %}</title>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/skel.css">
+</head>
+<body>
+    <nav>
+    {% set navigation_bar = [
+        ('/', 'index', 'Index'),
+        ('/page2/', 'page2', 'Seite 2'),
+        ('/page3/', 'page3', 'Seite 3')
+    ] -%}
+    {% set active_page = active_page|default('index') -%}
+        <ul>
+            {% for href, id, caption in navigation_bar %}
+                <li{% if id == active_page %} class="active"{% endif %}>
+                    <a href="{{ href }}">{{ caption }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <section>
+    {% block content %}...no content...{% endblock %}
+    </section>
+    <footer>
+        {% import 'user.tmpl' as user %}
+        Angemeldet als {{ user.u(current_user) }}.
+    </footer>
+</body>
+</html>

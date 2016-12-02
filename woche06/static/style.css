@@ -1,0 +1,52 @@
+/* grauer Hintergrund, Font "Georgia", Seitenrand 36px */
+body {
+ color: #666;
+ background-color: #CCC;
+ font-family: Georgia, "Times New Roman", Times, serif;
+ margin: 36px;
+}
+
+/* seite weiß, mittig und max. 54 Buchstaben breit */
+#page {
+ background-color: #FFF;
+ margin: 0 auto;
+ width: 75%;
+ padding: 12px 32px;
+}
+
+/* groeßerer Zeilenabstand und Absatzabstand */
+#page p {
+ line-height: 1.5em;
+ margin-bottom: 1.2em;
+}
+
+/* Links rot und nicht unterstrichen */
+#page a {
+ color: #900;
+ text-decoration: none;
+}
+
+/* ueberschriften 2em groß, nicht fett, schwarz und mit extra abstand */
+#page h1 {
+ font-weight: normal;
+ font-size: 2em;
+ color: #000;
+ margin-bottom: 1.2em;
+}
+
+
+/* header mit schicker hintergrundfarbe */
+#pageheader {
+    background-color:#CC0;
+}
+
+/* Aktionsleiste mit schicker hintergrundfarbe */
+#pageactions {
+    background-color:#0CC;
+}
+
+/* textarea zum eingeben */
+#wikiedit {
+    width:100%;
+    height:10em;
+}

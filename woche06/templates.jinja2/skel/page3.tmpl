@@ -1,0 +1,18 @@
+{% extends 'skel.tmpl' %}
+{% set active_page = 'page3' %}
+
+{% block title %}Seite 3{% endblock %}
+
+{% block content %}
+    <h1>Die dritte Seite</h1>
+    <p>
+      Diese Seite ist die dritte. Sie steht nach der zweiten. Sie ist toller, weil sie mehr magische Zahlen enthält.
+    </p>
+    <p>Und hier sind die magischen Zahlen:
+        {% for number in magic_numbers: %}
+            {{number}}{% if not loop.last %},{% endif %}
+        {% endfor %}.
+    </p>
+    <p>Dieser Text ist sicher: {{ message|safe }}</p>
+
+{% endblock %}
