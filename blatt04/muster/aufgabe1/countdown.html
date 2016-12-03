@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown</title>
+</head>
+<style>
+    body { font-size: 150%; }
+    div {
+        position: absolute;
+        top:0; left:0; bottom:0; right:0;
+        width:400px; height:200px;
+        margin: auto;
+    }
+    #countdown { font-size:100px; }
+    .button {padding:10px; margin-top: 40px; font-size: 50%;}
+</style>
+<script>
+    var then;  // global variable: countdown target
+    var redirect; // global variable: redirection target
+
+    function displayCountdown() {
+        var now = new Date();
+        var diffSeconds = (then.getTime() - now.getTime())/1000;  // getTime=miliseconds since 1.1.1970
+        if (diffSeconds <= 0) {
+            if (redirect) {
+                window.location = redirect;
+            } else {
+                window.location = "http://unicodesnowmanforyou.com/";
+            }
+            return
+        }
+        var hours = Math.floor(diffSeconds/3600);
+        var minutes = ("00"+Math.floor((diffSeconds-(hours*3600))/60)).substr(-2,2);
+        var seconds = ("00"+Math.floor(diffSeconds - hours*3600 - minutes*60)).substr(-2,2);
+
+        document.getElementById("countdown").innerHTML = hours+":"+minutes+":"+seconds;
+    }
+
+    function startCountdown(event) {
+        var now = new Date();
+        then = new Date();
+        then.setDate(document.getElementById("day").value);
+        then.setMonth(document.getElementById("month").value);
+        then.setFullYear(document.getElementById("year").value);
+        then.setHours(document.getElementById("hour").value);
+        then.setMinutes(document.getElementById("minute").value);
+        then.setSeconds(document.getElementById("second").value);
+        redirect = document.getElementById("redirect").value;
+        document.getElementById("input").style.display="none";
+        window.setInterval(displayCountdown, 1000);
+        event.preventDefault();
+        return false;
+    };
+
+    window.addEventListener("DOMContentLoaded", function () {
+        var now=new Date();
+        document.getElementById("day").value = now.getDate();
+        document.getElementById("month").value = now.getMonth();
+        document.getElementById("year").value = now.getFullYear();
+        document.getElementById("hour").value = now.getHours();
+        document.getElementById("minute").value = now.getMinutes();
+        document.getElementById("second").value = now.getSeconds();
+        document.getElementById("input-form").addEventListener("submit",startCountdown);
+    });
+
+</script>
+<body>
+    <div id="countdown"></div>
+    <div id="input">
+        <form id="input-form">
+            <fieldset>
+                <legend>Tag und Uhrzeit</legend>
+                <input name="day" id="day" size="2">.
+                <input name="month" id="month" size="2">.
+                <input name="year" id="year" size="4"> &nbsp; &nbsp;
+                <input name="hour" id="hour" size="2"> :
+                <input name="minute" id="minute" size="2"> :
+                <input name="second" id="second" size="2">
+            </fieldset>
+            <br>
+            <label for="redirect">Weiterleitung:</label>
+            <input name="redirect" id="redirect">
+            <br>
+            <input class="button" type="submit" value="Countdown starten">
+
+
+        </form>
+    </div>
+</body>
+</html>

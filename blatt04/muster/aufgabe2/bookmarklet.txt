@@ -1,0 +1,1 @@
+javscript:var e=document.createElement("p");e.innerHTML=document.getElementById("footer").innerHTML.substr(42,16).split(" ")[0];e.style.fontSize="450%";e.style.color="white";var logo=document.getElementById("barTopStudip");logo.parentNode.replaceChild(e,logo);void(0);
