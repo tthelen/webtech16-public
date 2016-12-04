@@ -1,0 +1,105 @@
+body {
+	margin: 0;
+	font-family: sans-serif;
+}
+
+a:visited, a:link {color: black; }
+
+header {
+	height: 100px;
+	width: 100%;
+	background-color: black;
+	color: white;
+	padding:1em;
+}
+
+nav.top {
+	width: 240px;
+	margin: 10px;
+	float: left;
+	border-right: 1px solid grey;
+}
+
+nav.bottom {
+	width: 100%;
+	margin: 20px;
+	text-align: center;
+}
+
+nav.dropdown {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+nav ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+nav li {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-right: 1em;
+	font-size: 75%;
+}
+
+nav li:hover {
+	background-color: lightgrey;
+}
+
+nav a {text-decoration-line: none; }
+nav a::before { content: &middot; }
+
+section {
+	background: white;
+	margin: 10px;
+	margin-left: 280px;
+}
+
+article a { text-decoration-line: none; border-bottom: 1px dashed grey; }
+article a:visited, article a:link { color: darkslategrey; }
+article a::before { content:"\27A4"; }
+
+section footer a:link, section footer a:visited {
+    background-color: darkgrey;
+	border-radius: 2px;
+    color: white;
+    padding: 4px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.wikiedit {
+	display: block;
+	min-height: 20em;
+	width: 80%;
+}
+
+section footer {
+	margin-top: 60px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+@media (max-width: 640px) {
+	nav.top {
+		display: none;
+	}
+	nav.bottom {
+		display: block;
+	}
+	section {
+		margin-left: 10px;
+	}
+}
+
+@media (min-width: 641px) {
+	nav.top {
+		display: block;
+	}
+	nav.bottom {
+		display: none;
+	}
+
