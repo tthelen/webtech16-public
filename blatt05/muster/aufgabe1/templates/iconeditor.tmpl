@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ICON editor</title>
+    <script src="/static/validate.js"></script>
+    <script src="/static/iconeditor.js"></script>
+    <link rel="stylesheet" href="/static/iconeditor.css">
+</head>
+
+<body>
+
+<header>
+    <h1>ICON Editor</h1>
+</header>
+
+<section>
+    <div id="icon-table">
+    </div>
+<!--    <div id="icon-table-commands" class="commands">
+        <button id="invert" class="command">Invertieren</button>
+        &nbsp;
+        <button id="clear" class="command">L&ouml;schen</button>
+    </div> -->
+</section>
+
+<aside>
+<h2>Farbauswahl</h2>
+<table><tr><td>Aktuelle Farbe: </td><td id="current-color" class="icon-pixel"></td></tr></table>
+<div id="color-picker">
+</div>
+<!--
+<div class="commands">
+    Spezialpinsel:
+    <span class="command" id="bw-switcher">
+        <img title="Schwarz-Weiß-Invertierer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAATUlEQVQ4jaXMOQ4AIAwDQf//06FAII5cTiy5nIU0BkDQwtXAxpXAhdnAh5mAirMBE2cCLo4CIfYCKWwF0lgLUPgN0PgMlPAKlPF8C8sAx7Flt/yfjmkAAAAASUVORK5CYII="></span>
+    </span>
+    &nbsp;
+    <span class="command" id="random">
+        <img title="Zufalls-Pinsel" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADs0lEQVQ4jQXBCzTVBwDA4f/xOLYS1szVVV53ljiyUZ3MWRF3XO+DUUQqm5kVMa9ZrkcndLYzZrKWTqLZMGWbqZh2PZZH68mZ97UtC0W6HovJ/e37hP3Vf7I++wEubtf5oO8FtHoMeXtTBuJbQ6hEvhgMNrKgvQ/POyLWvL+PUpsUkoaPcN7Xjh25cwgFyRsJFDXT3BiNKC2H8DENZCNeVE7XceLjRWoX1vKrsTu566q4+WYA3g5DZJ1YpMrvNUI7JhGUnrm8d1xKTNdGtq0toiT/P2r9jnCgeITZrSICpYHYaBQSv6OLoIBUtF1ccJxIp9XpJyYL5AjDj13orJdiqP6KoZMT9F2Tozy8i5nLr6C/Vcz2o4dYOj9DZM0UQ6u+fNSXQZPzAEEmppS1NyF86PCAFvNzfKuhxtXqXaJsZUz/cI5p9QLVIbaMlql5yWMNFhFVOOeY4HxkhcM+FZT4laN+lokw555DQuDXXDUZ4FpnKHVlf7DOfonl3mksu88w5ZqHseILajRM6erXxyqrhXhxCY91XiTb6zTCq6oEvg/O4Z9jAm9UlbPhoAo9zUf49MgIu+jIl3ejMQu+Sp2RByHL1tTPHGU2uRCj4ytkDssRtigljOlOssUzjIgUGXHrZ5BsScO//jn2x+PY1+CDUe/fFFW4Eb6qR3qRFF+ZNtGbwmgZv49gHiEid2cDKcli7PorEJycia7VYjzdm2pFNxn2/jTvlmF1aYon8wLna+9w2qmD4AF93Fp1EaLa5hnK34NmpTshOw3QCo/EfrMrl1IbKJTPsCp1ZXrdXR6Wb+aRvAztM5ZorerQUdxEY9UcgkFdCr/pxqKZ1Ye38ja2q37YH+ik1HCCUwG6LGd4cDXPlAvPQinq38Nin4qIyk/5JcoDx55oBGu5BK3ss5TmH0P45CDGhq9zz6GCKekqEotuVBIBRfE46e1K1N+9Q5vNWTrH9rNhtp2B3xsQxr8pwFm0SEzHE0YfHuLpyUwuR7zMgy4JEXmd5MY8JXQpnp+9EjmquMFc421ECXnoORizNegthNjWJCSyW+xtlbOU1Eax/14GvZu5bXuDp+3z6CsjuViizS4zK3wSrZiIdEXRq6BBeRYzE32E5tgErI1+5MLnMdwbX6BTnEaHTyl2liOorjhwRexJhk0q4mkpVcq/0NeREbVtN3VZ7giGiQjX61e4HxOMYk7F4KA5IcNNxFd3c7O3AddCN05vf06Q0yjqnGCyKmqo/TcRi7hwbIqMiAr6jP8Bs3t8jpcpmhAAAAAASUVORK5CYII="></span>
+    </span>
+</div>
+-->
+<div id="brush-commands" class="commands">
+        <label for="brush-width">Pinselbreite: </label>
+        <input id="brush-width" type="range" min="1" max="10" step="1">
+        &nbsp; <span id="brush-width-display"></span>
+    </div>
+    <h2>Vorschau:</h2>
+    <div id="preview">
+        <canvas id="preview-canvas" width="16" height="16"></canvas>
+    </div>
+    <h2>Speichern:</h2>
+    <form id="save" method="post" action="/save">
+        <label for="save-title">Titel (nur Buchstaben und Zahlen): </label>
+        <input type="text" name="title" id="save-title" data-validate="regex:/^[a-zA-Z0-9]+$/"> <span id="save-title-msg"></span><br>
+        <input type="hidden" id="save-icon" name="icon" value="">
+        <input type="submit">
+    </form>
+</aside>
+
+<footer>
+    <p>Vorhandene Icons:</p>
+    $icons
+</footer>
+</body>
+</html>

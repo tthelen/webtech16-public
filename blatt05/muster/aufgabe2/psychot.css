@@ -1,0 +1,72 @@
+
+body {
+    margin: 0;
+}
+
+#testlist {
+    position: fixed;
+    top: 0;
+    padding:3px;
+    width:100%;
+    background-color: #8f7a66;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+}
+#testlist ul li {
+    display: inline;
+    margin-right:30px;
+}
+
+#psychot {
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    width:800px;
+    height:450px;
+    font-family: "Vollkorn", sans-serif;
+    text-align:center;
+}
+
+section {
+    padding: 0.2em;
+}
+
+section > header {
+    font-size: 2em;
+    margin-bottom: 1em;
+    font: 400 2em 'Ubuntu', Helvetica, sans-serif;
+}
+
+article > header {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+article li {
+    list-style-type: none;
+    padding: 1em;
+    margin: 1em;
+    margin-right: 2em;
+}
+
+article li:hover {
+    background-color: #edc22e;
+}
+
+.result {
+    font-size: 3em;
+}
+
+.explanation {
+    font-size: 0.75em;
+    color: #bbada0;
+}
+
+.again {
+    font-size: 1em;
+    color: indianred;
+}
