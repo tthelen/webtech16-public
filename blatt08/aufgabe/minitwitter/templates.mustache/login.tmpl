@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Login</title>
+        <link rel="stylesheet" type="text/css" href="/static/login.css">
+	</head>
+	<body>
+    <div class="loginform">
+        <h2>Bitte einloggen</h2>
+        <p>Benutzer: admin, user1, user2 (Passwort=Benutzername)</p>
+        {{#msg}} {{{msg}}} {{/msg}}
+        <form action="{{{action}}}" method="post">
+            <label for="username">Benutzername:</label> <input type="text" name="_username" id="username"> <br>
+            <label for="password">Passwort:</label>  <input type="password" name="_password" id="password"> <br>
+            {{#post_parameters}}
+                {{{.}}}
+            {{/post_parameters}}
+            &nbsp;<br>
+            <input type="submit" value="Absenden">
+        </form>
+    </div>
+
+	</body>
+</html>

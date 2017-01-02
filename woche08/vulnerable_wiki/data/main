@@ -1,0 +1,12 @@
+!Ein Wiki
+
+Wikis und Nutzerauthentifizierung. Das [[UrWiki]] kannte keine Authentifizierung. Jeder und jede durfte ohne Anmeldung
+drauflosschreiben. So etwas ist heute leider nicht mehr möglich, weil in kürzester Zeit die [[Spambots]] vorbeikommen
+und alles mit Werbung zuspammen.
+
+Also braucht es eine [[Benutzerverwaltung]], oder zumindest Captchas, um sicherzustellen, dass ein Mensch dahintersteckt.
+
+In diesem Wiki soll das nach Erledigung der Aufgabe auch so sein. Editieren und löschen dürfen dann nur noch
+[[AngemeldeteNutzer]].
+
+Eine [[WichtigeSeite]] liegt dort!

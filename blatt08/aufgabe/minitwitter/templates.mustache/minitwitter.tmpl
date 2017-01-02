@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>MiniTwitter &middot; Start</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/minitwitter.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          {{#user}}
+           {{#is_authenticated}}
+               <li><a href="/logout">{{{fullname}}} (Logout)</a></li>
+           {{/is_authenticated}}
+           {{#is_admin}}
+               <li><a href="/useradmin">Admin</a></li>
+           {{/is_admin}}
+           {{^is_authenticated}}
+               <li><a href="/login">Login</a></li>
+           {{/is_authenticated}}
+          {{/user}}
+        </ul>
+        <h3 class="muted">Webtech17 &middot; BuggyMiniTwitter</h3>
+      </div>
+
+      <hr>
+
+      <div class="jumbotron">
+        <h1>Buggy MiniTwitter!</h1>
+        <p class="lead">Let yourself know what you're doing on your own server.</p>
+        <form method="POST" id="theform" action="/">
+	        <p>
+	        <input type="text" name="status" id="status" placeholder="Right now, in my life...">
+	        </p>
+	        <button type="submit" class="btn btn-large btn-success">Post!</button>
+	    </form>
+      </div>
+
+      <div class="row-fluid marketing">
+
+      {{#message}}<p class="bg-info message">{{/message}}
+      {{{message}}}
+      {{#message}}</p>{{/message}}
+
+        <hr>
+
+        <div class="span6">
+          {{#tweets}}
+            <h4>{{{date}}}</h4>
+            <p>{{{tweet}}}</p>
+          {{/tweets}}
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="footer">
+        <p>Public Domain, Tobias Thelen, Universität Osnabrück, 2013-2017</p>
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

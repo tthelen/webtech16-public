@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Useradmin</title>
+  </head>
+
+  <body>
+	<h1>Nutzerliste</h1>
+	<p><i>Admins don't need fance web design.</i></p>
+	<div class="list">
+	<div class="msg">{{{msg}}}</div>
+	<p>Hallo, du bist <em>{{#user}}{{{username}}}</em> und hast die Rechtestufe <em>{{{role}}}</em>.{{/user}}</p>
+	<table>
+    	<tr><th>Nutzername</th><th>Rolle</th><th>Passwort</th><th>Aktion</th></tr>
+	    {{#userlist}}
+			<tr>
+			<td>{{username}}</td>
+			<td>{{role}}</td>
+			<td>{{password}}</td>
+			<td><a href="useradmin/delete/{{username}}">Löschen</a></td>
+			</tr>
+		{{/userlist}}
+	</table>
+	</div>
+	<h1>Neuen Nutzer anlegen</h1>
+	<form action="useradmin/create" method="post">
+		<p>Benutzername: <input type="text" name="username" value=""></p>
+		<p>Passwort: <input type="text" name="password" value=""></p>
+		<p>Rechtestufe: <select size=0 name="role">
+			<option name="user" value="user">user</option>
+			<option name="admin" value="admin">admin</option>
+		</select></p>
+		<p>Vollständiger Name: <input type="test" name="fullname"></p>
+		<input type="submit" value="save">
+	</form>
+  <hr>
+  <a href="/">Back to application</a>
+  </body>
+</html>

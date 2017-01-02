@@ -1,0 +1,27 @@
+div.loginform {
+    width: 200px;
+    height: 300px;
+    background-color: rgba(255,255,255,0.75);
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    padding: 15px;
+    border: 1px solid black;
+    border-top: 20px solid rgba(0,0,0,0.75);
+}
+
+div.loginform h2 {
+    margin-top: 0px;
+}
+
+body {
+    background-image: url('http://upload.wikimedia.org/wikipedia/commons/1/14/Caneel_Bay_Turtle_Bay_Beach_4.jpg');
+    background-image: url('http://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Mission_control_center.jpg/1920px-Mission_control_center.jpg');
+    background-size: 100%;
+}

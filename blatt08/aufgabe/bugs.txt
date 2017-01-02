@@ -1,0 +1,46 @@
+Gefundene Lücken:
+
+Nummer 1:
+=========
+
+- Kurzbeschreibung der Lücke:
+- Typ der Sicherheitslücke gem. Vorlesung:
+- Dateiname des Screenshots oder des Selenium-Skripts:
+- Maßnahmen zu Behebung:
+- geänderte Dateien:
+
+Nummer 2:
+=========
+
+- Kurzbeschreibung der Lücke:
+- Typ der Sicherheitslücke gem. Vorlesung:
+- Dateiname des Screenshots oder des Selenium-Skripts:
+- Maßnahmen zu Behebung:
+- geänderte Dateien:
+
+Nummer 3:
+=========
+
+- Kurzbeschreibung der Lücke:
+- Typ der Sicherheitslücke gem. Vorlesung:
+- Dateiname des Screenshots oder des Selenium-Skripts:
+- Maßnahmen zu Behebung:
+- geänderte Dateien:
+
+Nummer 4:
+=========
+
+- Kurzbeschreibung der Lücke:
+- Typ der Sicherheitslücke gem. Vorlesung:
+- Dateiname des Screenshots oder des Selenium-Skripts:
+- Maßnahmen zu Behebung:
+- geänderte Dateien:
+
+Nummer 5:
+=========
+
+- Kurzbeschreibung der Lücke:
+- Typ der Sicherheitslücke gem. Vorlesung:
+- Dateiname des Screenshots oder des Selenium-Skripts:
+- Maßnahmen zu Behebung:
+- geänderte Dateien:

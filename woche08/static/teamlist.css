@@ -1,0 +1,49 @@
+body {
+    font-family: sans-serif;
+}
+
+#thehead {
+    font-size: 200%;
+    background-color: orange;
+    padding:15px;
+}
+
+nav {
+    font-size: 150%;
+    padding:15px;
+    background-color: darkgrey;
+}
+
+nav :link, nav :visited {
+    text-decoration: none;
+    color: black;
+}
+
+#thelist {
+    float:left;
+    width: 240px;
+}
+
+#thelist header {
+    font-size: 150%;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 20px;
+}
+
+#thelist ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+#thelist li {
+    margin: 5px;
+    padding: 5px;
+    background-color: #00CCCC;
+}
+
+article {
+    margin-left: 300px;
+    padding-top: 30px;
+    font-size: 200%;
+}

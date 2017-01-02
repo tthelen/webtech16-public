@@ -1,0 +1,16 @@
+{{#person}}
+    <h1>{{firstname}} {{lastname}}</h1>
+    <p>{{email}}</p>
+    <h1>Hobbies:</h1>
+        <ul>
+            {{#hobbies}}
+                <li>{{.}}</li>
+            {{/hobbies}}
+        </ul>
+{{/person}}
+<h1>Teams:</h1>
+<ul>
+    {{#teams}}
+        <li>{{name}}</li>
+    {{/teams}}
+</ul>
