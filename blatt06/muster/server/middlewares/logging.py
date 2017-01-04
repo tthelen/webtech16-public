@@ -16,7 +16,7 @@ class LoggingMiddleware(Middleware):
         """Write log file entry."""
 
         import datetime
-        now = str(datetime.datetime.now())  # standard string representation of current date and time
+        now = str(datetime.datetime.now()).split('.')[0]  # standard string representation of current date and time
         if response.body:
             length=len(response.body)
         else:
@@ -25,7 +25,10 @@ class LoggingMiddleware(Middleware):
         with open(self.logfile, "a") as file:
             file.write(self.request.caddr[0]+" ")  # address
             file.write("-" + " ")  # stays empty
-            file.write("-" + " ")  # authenticated user # TODO aufgabe 4
+            if self.request.user:
+                file.write(self.request.user+" ")
+            else:
+                file.write("-" + " ")  # authenticated user # TODO aufgabe 4
             file.write("[{}] ".format(now))  # now
             file.write('"{} {} {}" '.format(self.request.method, self.request.resource, self.request.protocol))  # request line
             file.write(str(response.code)+" ")   # response code
