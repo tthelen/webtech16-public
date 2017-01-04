@@ -1,0 +1,8 @@
+{{> start}}
+			<article>
+				<form action="/save/{{pagename}}" method="post">
+					<textarea class="wikiedit" name="wikitext">{{text}}</textarea>
+					<input type="submit" value="save">
+				</form>
+			</article>
+{{> end}}

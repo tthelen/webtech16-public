@@ -1,0 +1,23 @@
+        <footer class="actions">
+            <a href="/show">back to main</a>
+            {{#pagename}}
+                &middot;
+                <a href="/edit/{{.}}">Edit</a>
+                &middot;
+                <a href="/delete/{{.}}">Delete</a>
+            {{/pagename}}
+        </footer>
+		</section>
+		<nav class="bottom">
+			<p>Alle Wiki-Seiten</p>
+            <form action='' method='get'>
+                <select name='pagename' size=1>
+			    {{#pagelist}}
+                    <option value='{{.}}'>{{.}}</option>
+    			{{/pagelist}}
+                </select>
+                <input type=submit value='Go!'>
+            </form>
+		</nav>
+	</body>
+</html>

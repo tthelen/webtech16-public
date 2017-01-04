@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>$error</title>
+		<link rel="stylesheet" type="text/css" href="/static/wiki.css">
+	</head>
+	<body>
+		<header><h1>$pagename</h1></header>
+		<nav class="top">
+			<p>Wiki-Seiten:</p>
+			$pagelist
+		</nav>
+		<section>
+			<article>
+				<form action="/save/$pagename" method="post">
+					<textarea class="wikiedit" name="wikitext">$text</textarea>
+					<input type="submit" value="save">
+				</form>
+			</article>
+			<footer class="actions">
+				<a href="/show">back to main</a>
+			</footer>
+		</section>
+		<nav class="bottom">
+			<p>Alle Wiki-Seiten</p>
+			$pagelist
+		</nav>	</body>
+</html>

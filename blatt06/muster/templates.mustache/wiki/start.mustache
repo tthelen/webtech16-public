@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Wiki {{pagename}}</title>
+		<link rel="stylesheet" type="text/css" href="/static/wiki.css">
+	</head>
+	<body>
+		<header><h1>{{pagename}}</h1></header>
+		<nav class="top">
+            {{#user}}
+                <p><i>Eingeloggt als {{.}}.</i></p>
+                <form action="" method="post"><input type="hidden" name="__do_logout" value="1"><button type="submit">Logout</button></form>
+            {{/user}}
+            {{^user}}
+                <p><i>Nicht eingeloggt.
+                    (<a href="/login">Login</a>)</i></p>
+            {{/user}}
+			<p>Wiki-Seiten:</p>
+            <ul class='pagelist'>
+			{{#pagelist}}
+                 <li><a href='/show/{{.}}'>{{.}}</a></li>
+			{{/pagelist}}
+            </ul>
+		</nav>
+		<section>

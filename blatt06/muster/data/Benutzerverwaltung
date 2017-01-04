@@ -1,0 +1,16 @@
+!Die Benutzerverwaltung
+
+Für die Aufgabe ist keine komplette Benutzerverwaltung gefordert. Es reicht z.B. eine Datei, in der Nutzername und Passwort abgelegt sind. Die liest das Programm dann aus und vergleicht.
+
+Selbstverständlich darf das Passwort nicht im Klartext gespeichert werden, sondern nur kryptographisch verschlüsselt. Außerdem muss es einen Salt beinhalten, damit das verschlüsselte Passwort nicht über vorberechnete Hash-Tabellen angreifbar wird.
+
+Ein Eintrag in der der [[Benutzerverwaltung]] enthält also:
+
+- Benutzername
+
+- Salt (Ein zufallswert)
+
+- Verschlüsseltes Passwort (SHA256(salt+passwort))
+
+Beim Login wird dann das eingegebene Passwort ebenfalls mit den Salt gehasht und die Hashwerte verglichen. Dann ist man [[AngemeldeterNutzer]].
+
