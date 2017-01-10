@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Client (REST)</title>
+
+    <style>
+        #nav li {display: block; }
+        #nav { padding:20px; font-size: 200%; background-color: #2aabd2; }
+        .filecontent { width:50%; padding: 5px; border: 1px solid grey; }
+        a:link, a:visited { color: black; }
+    </style>
+    <!-- we need two javascript files: mustache library and the client code -->
+    <script src="mustache.js"></script>
+    <script src="file_client_rest.js"></script>
+
+    <!-- mustache templates go here. they are just ordinary dom elements! -->
+    <script id="file_list" type="x-tmpl-mustache">
+        <h1>Dateien:</h1>
+        <ul>
+        {{! remember mustache syntax: { { #files ... /files } } iterates through a list, { { . } } references the current element }}
+        {{#files}}
+           <li><a data-readfile='{{.}}' href='#'>{{.}}</a> (<a href="#" data-deletefile='{{url}}'>Löschen</a>)</li>
+        {{/files}}
+        </ul>
+        <p>Aktionen: <a href="#" data-createfile="1">Neue Datei</a></p>
+    </script>
+
+    <script id="file_error" type="x-tmpl-mustache">
+        <h1>Fehler!</h1>
+        <p>{{error}}</p>
+    </script>
+
+    <script id="file_read" type="x-tmpl-mustache">
+        <h1>Datei <i>{{id}}</i></h1>
+        <p class="filecontent">{{content}}<p>
+        <p>Aktionen: <a href="#" data-editfile='{{url}}'>Bearbeiten</a> <a href="#" data-deletefile='{{url}}'>Löschen</a></p>
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="nav">
+                <li><a id="nav_list" href="#">List all files</a></li>
+            </ul>  <!-- href='#' prevents the browser from issuing a new request -->
+        </nav>
+        <h1>File Client</h1>
+    </header>
+    <section id="content">
+        Here goes the content.
+    </section>
+</body>
+</html>

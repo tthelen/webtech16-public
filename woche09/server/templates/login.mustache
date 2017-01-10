@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        section { width:100%; height:100%; margin: auto; }
+    </style>
+</head>
+<body>
+<section>
+    <form action="" method="POST">
+        <p><label for="username">Username:</label> <input name="username" type="text" size="25"></p>
+        <p><label for="password">Password:</label> <input name="password" type="password" size="25"></p>
+        <input type="hidden" name="__do_login" value="1">
+        {{#hidden_fields}}
+            <input type="hidden" name="{{name}}" value="{{value}}">
+        {{/hidden_fields}}
+        <p><input type="submit" value="Login!"></p>
+    </form>
+</section>
+</body>
+</html>
