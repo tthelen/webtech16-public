@@ -1,0 +1,14 @@
+{{#team}}
+    <h1 id="teamname" data-tid="{{id}}">{{name}}</h1>
+{{/team}}
+<h1>Members:</h1>
+<ul>
+    {{#persons}}
+        <li>{{firstname}} {{lastname}} <span class="delete" data-deleteteamperson="{{id}}">X</span></li>
+    {{/persons}}
+</ul>
+<p><select name="addperson" id="new_team_person">
+     {{#allpersons}}
+         <option value="{{id}}">{{firstname}} {{lastname}}</option>
+     {{/allpersons}}
+ </select> <button type="button" id="new_team_add_person">+</button></p>

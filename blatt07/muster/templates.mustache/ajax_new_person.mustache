@@ -1,0 +1,23 @@
+<div id="error"></div>
+<form id="new_person" action="/" method="get">
+    <p><label for="new_person_firstname">Vorname:</label> <input id="new_person_firstname" name="firstname" size="40">
+    <p><label for="new_person_lastname">Nachname:</label> <input id="new_person_lastname" name="lastname" size="40">
+    <p><label for="new_person_email">E-Mail:</label> <input id="new_person_email" name="email" size="40">
+
+    <p><label for="new_person_hobbylist">Hobbies:</label></p>
+    <ul id="new_person_hobbylist">
+    </ul>
+    <p><input size="40" name="addhobby" id="new_person_addhobby"> <button type="button" id="new_person_add_hobby">+</button></p>
+
+    <p><label for="new_person_teamlist">Teams:</label></p>
+    <ul id="new_person_teamlist">
+    </ul>
+    <select name="addteam" id="new_person_team">
+         {{#teams}}
+             <option value="{{id}}">{{name}}</option>
+         {{/teams}}
+     </select> <button type="button" id="new_person_add_team">+</button></p>
+
+    <p><button type="submit">Person anlegen</button> </p>
+
+</form>

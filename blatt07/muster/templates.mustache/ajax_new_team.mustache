@@ -1,0 +1,16 @@
+<div id="error"></div>
+<form id="new_team" action="/" method="get">
+    <p><label for="new_team_name">Name:</label> <input id="new_team_name" name="name" size="40">
+
+    <p><label for="new_team_personlist">Mitglieder:</label></p>
+    <ul id="new_team_personlist">
+    </ul>
+    <select name="addperson" id="new_team_person">
+         {{#persons}}
+             <option value="{{id}}">{{firstname}} {{lastname}}</option>
+         {{/persons}}
+     </select> <button type="button" id="new_team_add_person">+</button></p>
+
+    <p><button type="submit">Team anlegen</button> </p>
+
+</form>

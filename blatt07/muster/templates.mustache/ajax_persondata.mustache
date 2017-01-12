@@ -1,0 +1,23 @@
+{{#person}}
+    <h1 id="personname" data-pid="{{id}}">{{firstname}} {{lastname}}</h1>
+    <p>{{email}}</p>
+    <h1>Hobbies:</h1>
+        <ul id="person-hobbylist">
+            {{#hobbies}}
+                <li>{{.}} <span class="delete" data-deletehobby="{{.}}" data-deletehobbypersonid="{{id}}">X</span></li>
+            {{/hobbies}}
+        </ul>
+        <p><input size="40" name="addhobby" id="person_addhobby"> <button type="button" id="person_add_hobby">+</button></p>
+{{/person}}
+<h1>Teams:</h1>
+<ul>
+    {{#teams}}
+        <li>{{name}} <span class="delete" data-deletepersonteam="{{id}}">X</span></li>
+    {{/teams}}
+</ul>
+
+<select name="addteam" id="person_addteam">
+     {{#allteams}}
+         <option value="{{id}}">{{name}}</option>
+     {{/allteams}}
+</select> <button type="button" id="person_add_team">+</button></p>

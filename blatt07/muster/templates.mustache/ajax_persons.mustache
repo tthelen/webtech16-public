@@ -1,0 +1,9 @@
+<header>Die Personen:</header>
+<ul id="personlist">
+    {{#persons}}
+        <li id="person-{{id}}}" data-personid="{{id}}">{{firstname}} {{lastname}} <span class="delete" data-deletepersonid="{{id}}">X</span></li>
+    {{/persons}}
+</ul>
+<p>
+  <button id="new_person_button">Neue Person anlegen</button>
+</p>

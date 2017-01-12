@@ -1,0 +1,9 @@
+<header>Die Teams:</header>
+<ul>
+    {{#teams}}
+        <li data-teamid="{{id}}">{{name}}  <span class="delete" data-deleteteamid="{{id}}">X</span></li>
+    {{/teams}}
+</ul>
+<p>
+  <button id="new_team_button">Neues Team anlegen</button>
+</p>
