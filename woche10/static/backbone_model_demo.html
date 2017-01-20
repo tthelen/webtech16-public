@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World in Backbone.js</title>
+  <!-- based on: http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/ -->
+</head>
+<body>
+  <!-- ========= -->
+  <!-- Your HTML -->
+  <!-- ========= -->
+
+  <div id="container">Loading...</div>
+
+  <!-- ========= -->
+  <!-- Libraries -->
+  <!-- ========= -->
+  <script src="libs/jquery.js" type="text/javascript"></script>
+  <script src="libs/underscore.js" type="text/javascript"></script>
+  <script src="libs/mustache.js" type="text/javascript"></script>
+  <script src="libs/backbone.js" type="text/javascript"></script>
+
+  <!-- =============== -->
+  <!-- Javascript code -->
+  <!-- =============== -->
+  <script type="text/javascript">
+    var app = {}; // create namespace for our app
+
+    //--------------
+    // Models
+    //--------------
+    app.Todo = Backbone.Model.extend({
+      defaults: {
+        title: '',
+        completed: false
+      },
+      toggle: function(){
+        this.save({ completed: !this.get('completed')});
+      }
+    });
+
+    //--------------
+    // Collections
+    //--------------
+    app.TodoList = Backbone.Collection.extend({
+      model: app.Todo,
+      url: 'http://localhost:8080/todo'
+    });
+
+    // instance of the Collection
+    app.todoList = new app.TodoList();
+    app.todoList.fetch();
+  </script>
+
+</body>
+</html>
+
