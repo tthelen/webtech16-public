@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>jQuery - Demo</title>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+    <script>
+        $(function () {  // DOMContentLoaded
+           $(document).on("click", ".del", function () {
+               $(this).parent().fadeOut("slow", function () { $(this).remove()});
+           });
+           $("#newpersonform").on("submit", function (event) {
+               $("#thelist").append("<li class='person'>" + $("#newperson").val() +
+                                    " <span class='del'>X</span></li>");
+               event.preventDefault();
+           });
+        });
+    </script>
+
+    <style>
+        .del { color:red; }
+    </style>
+
+</head>
+
+<body>
+
+<ul id="thelist">
+    <li id="p1" class="person">Tobias <span class="del">X</span></li>
+    <li id="p2" class="person">Hanna <span class="del">X</span></li>
+    <li id="p3" class="person">Michael <span class="del">X</span></li>
+    <li id="p4" class="person">Maria <span class="del">X</span></li>
+</ul>
+
+<form id="newpersonform">
+Neue Person: <input id="newperson" size="20">
+</form>
+
+</body>
+
+</html>

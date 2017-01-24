@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>underscore.js - Demo</title>
+    <script src="libs/underscore.js"></script>
+</head>
+<body>
+Alle Ausgaben als Alerts.
+
+<script>
+
+    // Collections
+
+    alert("_.includes([1,2,3,4,5,6,7,8], 4) = "+_.includes([1,2,3,4,5,6,7,8], 4)); // Ist 4 in der Collection enthalten?
+    _.each([1,2,3,4], alert); // rufe Funktion mit jedem einzelnen Element auf
+    var persons = [{name:'tobias', age:17}, {name:'hans',age:88}, {name:'woody',age:99}]
+    alert(_.pluck(persons, 'name')); // extrahiere Eigenschaft name aus den Objekten
+
+    // functions
+    var func = function (greeting) {return greeting+": "+this.name}; // Was ist this?
+    func = _.bind(func, {name: 'Tobias'}); // Bindet Funktion an Kontext/Objekt (= belegt this für die Funktion)
+    alert(func("Hallo"));
+
+    var substract = function (a,b) {return b - a; };
+    var sub5 = _.partial(substract, 5); // bildet partielle Funktion, indem 1. Parameter von substract mit 5 belegt wird
+    alert(sub5(20)); /// sollte 15 sein
+
+</script>
+</body>
+</html>
